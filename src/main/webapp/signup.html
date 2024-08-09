@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Register Profile</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+</head>
+
+<body class="jumbotron jumbotron-fluid">
+
+	<div class="jumbotron jumbotron-fluid">
+		<div class="container">
+			<h1 id="welcome">Sign up to become an employee</h1>
+            <br>
+			<div class="container-fluid">
+				<!-- This script will be defined in index.js -->
+				<form name="signupForm" onsubmit="signup(event.preventDefault())">
+					<!--  I may have prevent default() -->
+
+					<div class="form-group">
+						<label for="firstname">First Name</label> 
+                        <input type="text" class="form-control" name="firstname" id="firstname" 
+                        placeholder="Enter first name">
+					</div>
+
+					<div class="form-group">
+						<label for="lastname">Last Name</label> 
+                        <input type="text" class="form-control" name="lastname" id="lastname" 
+                        placeholder="Enter last name">
+					</div>
+
+					<div class="form-group">
+						<label for="email">Email</label> 
+						<input type="email" class="form-control" name="email" id="email" placeholder="Enter email">
+					</div>
+
+					<div class="form-group">
+                        <label for="username">Username</label> 
+                        <input type="text" class="form-control" name="username" id="username" 
+                        placeholder="Enter username">
+					</div>
+
+					<div class="form-group">
+						<label for="password">Password</label> 
+                        <input type="password" class="form-control" name="password" id="password" 
+                        placeholder="Enter password">
+					</div>
+
+					<div class="form-group">
+						<label for="repassword">Reenter password</label> 
+                        <input type="password" class="form-control" name="repassword" id="repassword" 
+                        placeholder="Enter the same password">
+					</div>
+
+					<button id="login" type="submit" class="btn btn-primary" value="Submit">Submit</button>
+					<br>
+				</form>
+				<br>
+				<button class="btn btn-primary" onclick="home()">GO BACK</button>
+				<br><br>
+				<div id="warningText"></div>
+			</div>
+		</div>
+
+	</div>
+	<script src="scripts/signup.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Employee HomePage</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+
+<body class="jumbotron jumbotron-fluid">
+	<div class="jumbotron">
+		<h1 id="welcome">You are logged in!</h1>
+		<br>
+		<button type="button" class="btn btn-outline-warning" onclick="profile()">View Your Profile</button>
+		<br> <br>
+		<button type="button" class="btn btn-outline-info" onclick="update()">Update Your Profile</button>
+		<br><br>
+		<button type="button" class="btn btn-outline-secondary" onclick="reim()">Submit a Reimbursement Request</button>
+		<br> <br>
+		<button type="button" class="btn btn-outline-success" onclick="pending()">View all your Pending Requests</button>
+		<br> <br>
+		<button type="button" class="btn btn-outline-danger" onclick="resolved()">View all your Resolved Requests</button>
+		<br> <br>
+		<button type="button" class="btn btn-outline-primary" onclick="logout()">Logout</button>
+		<br> <br>
+	</div>
+	<script src="scripts/Ehome.js"></script>
+</body>
+
+</html>

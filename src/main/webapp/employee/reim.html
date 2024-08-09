@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Submit Reimbursement</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+</head>
+
+<body class="jumbotron jumbotron-fluid">
+
+	<div class="jumbotron jumbotron-fluid">
+		<div class="container">
+			<h1 id="welcome">Welcome to Reimbursements</h1>
+			<h2>Please enter the amount and the type</h2>
+			<br>
+			<div class="container-fluid">
+				<!-- This script will be defined in index.js -->
+				<form name="reimForm" onsubmit="sendReim(event.preventDefault())">
+					<!--  I may have prevent default() -->
+
+					<div class="form-group">
+						<input type="number" class="form-control" required name="amount" 
+						id="amount" placeholder="Enter amount" min="1.00" max="1000000">
+					</div>
+
+					<div class="form-group">
+						<input type="text" class="form-control" name="description" 
+						id="description" placeholder="Enter description (optional)">
+					</div>
+
+					<div class="form-group">
+						<input type="number" min="1" max="4" class="form-control" 
+						required name="type" id="type" placeholder="Enter Type">
+						<ol>
+							<li>LODGE</li>
+							<li>TRAVEL</li>
+							<li>FOOD</li>
+							<li>OTHER</li>
+						</ol>
+					</div>
+					
+					<button id="login" type="submit" class="btn btn-primary" value="Submit">Submit</button>
+				</form>
+				<br>
+				<div id="warningText"></div>
+				<br>
+				<button class="btn btn-primary" onclick="home()">GO BACK</button>
+			</div>
+		</div>
+	</div>
+	<script src="scripts/reim.js"></script>
+</body>
+
+</html>

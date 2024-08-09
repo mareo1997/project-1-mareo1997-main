@@ -1,0 +1,53 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<!-- Hibernate is an ORM and persistence framework. Obj Relational Mapping 
+	- we take objs in programming langs and translate them into tables in our 
+	DB Persistence is storing info/data in DB in a way in which its durable. 
+	Benefits of hibernate? Its O-O, Its fast, It uses caching which means there're 
+	connection pools which mini the bottle necked speed caused by forming DB 
+	connections, It's modulare - you can write code one and change it later t 
+	mod our SQL/conn props -->
+
+<!-- The config class obj defines the properties of the session needed to 
+	communicate with our db -->
+<hibernate-configuration>
+	<session-factory>
+		<!-- JDBC props -->
+		<property name="hibernate.connection.url">${Hibernate}</property>
+		<property name="hibernate.connection.username">${DB_USERNAME}</property>
+		<property name="hibernate.connection.password">${DB_PASSWORD}</property>
+
+		<property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+		<property name="hibernate.connection.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+		<property name="hibernate.show_sql">false</property>
+		<property name="hibernate.format_sql">false</property>
+
+		<!-- The conn pool is a method of speeding up DB calls. Hibernate will 
+			create 10 conns to the DB when it starts up. Everytime you create a session 
+			the session will borrow an active conn from the pool. When you close the 
+			session, the connection doesnt close but is freed up for another session 
+			to use. Default size of the conn pool is 20 -->
+		<property name="hibernate.connection.pool_size">20</property>
+
+		<!-- hbm2ddl.auto is a hibernate prop that exports schema DDL to the DB 
+			when the sessionfactory is created -->
+		<property name="hibernate.hbm2ddl.auto">validate</property>
+		<!-- CREATE, VALIDATE, UPDATE, NONE 
+		
+		CREATE: drops all existing tables and objs with the names provided in annotations and then hibernate will create the schema for us. Not greate for production but useful for dev 
+		
+		VALIDATE: checks to make sure the schema still exists as expected. Is the setting we want for production 
+			
+		UPDATE: hibernate wont del anything but only add to schema if there are objs that havent been included yet 
+			
+		NONE: hibernate wont do anything or add to your schema <mapping class="com.revature.model.myclass"> -->
+
+		<mapping class="com.revature.model.User" />
+		<mapping class="com.revature.model.Role" />
+		<mapping class="com.revature.model.Reimbursement" />
+		<mapping class="com.revature.model.Status" />
+		<mapping class="com.revature.model.Type" />
+	</session-factory>
+</hibernate-configuration>
