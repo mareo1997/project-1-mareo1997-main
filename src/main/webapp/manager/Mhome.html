@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Manager HomePage</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+
+<body class="jumbotron jumbotron-fluid">
+	<div class="jumbotron">
+		<h1 id="welcome">You are logged in!</h1>
+		<br>
+		<button type="button" class="btn btn-outline-danger" onclick="requests()">See an Employees Pending Requests</button>
+		<br> <br>
+		<button type="button" class="btn btn-outline-success" onclick="empl()">See all Employees under you</button>
+		<br> <br>
+		<button type="button" class="btn btn-outline-secondary" onclick="resolve()">Resolve a Reimbursement Request</button>
+		<br> <br>
+		<button type="button" class="btn btn-outline-warning" onclick="allrequests()">See all Pending Requests</button>
+		<br> <br>
+		<button type="button" class="btn btn-outline-info" onclick="allresolved()">See all Resolved Requests</button>
+		<br><br>
+		<button type="button" class="btn btn-outline-primary" onclick="logout()">Logout</button>
+		<br> <br>
+	</div>
+	<script src="scripts/Mhome.js"></script>
+</body>
+
+</html>

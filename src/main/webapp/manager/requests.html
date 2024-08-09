@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Find Requests</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+
+<body class="jumbotron jumbotron-fluid">
+	
+	<div class="jumbotron jumbotron-fluid">
+		<div class="container">
+			<h1 id="welcome">Welcome to Requests</h1>
+			<!-- This script will be defined in index.js -->
+			<form name="resolveForm" onsubmit="findRequests(event.preventDefault())">
+				<!--  I may have prevent default() -->
+				<div class="form-group">
+					<h2>Enter a username to see there pending requests</h2>
+					<input type="text" class="form-control" required name="empl" id="empl" placeholder="Enter username">
+				</div>
+				<button id="login" type="submit" class="btn btn-primary" value="Submit">Submit</button>
+			</form>
+			<br>
+			<button class="btn btn-primary" onclick="home()">GO BACK</button>
+			<br><br>
+			<div id="warningText"></div>
+		</div>
+	</div>
+	<script src="scripts/requests.js"></script>
+</body>
+</html>
